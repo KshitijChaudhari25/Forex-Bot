@@ -1,0 +1,33 @@
+name: Forex-Bot
+
+on:
+  schedule:
+    - cron: '0 * * * *' # This tells GitHub to run it at minute 0 of every hour
+  workflow_dispatch: # This gives you a manual "Run" button to test it
+
+permissions:
+  contents: write # Allows the bot to save its memory back to your repository
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Grab the code
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Trading Libraries
+        run: pip install pandas requests
+
+      - name: Run the Athena Engine
+        run: python bot.py
+
+      - name: Save Memory
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "🤖 Auto-updated bot memory"
+          file_pattern: memory.txt
