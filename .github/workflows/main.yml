@@ -23,8 +23,8 @@ jobs:
       - name: Install Trading Libraries
         run: pip install pandas requests
 
-      - name: Run the Athena Engine
-        run: python bot.py
+      - name: Forex-Bot
+        run: Github-Forex-Bot.py
 
       - name: Save Memory
         uses: stefanzweifel/git-auto-commit-action@v5
