@@ -24,7 +24,7 @@ jobs:
         run: pip install pandas requests
 
       - name: Forex-Bot
-        run: Github-Forex-Bot.py
+        run: python Github-Forex-Bot.py
 
       - name: Save Memory
         uses: stefanzweifel/git-auto-commit-action@v5
