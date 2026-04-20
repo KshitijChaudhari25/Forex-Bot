@@ -2,7 +2,7 @@ name: Forex-Bot
 
 on:
   schedule:
-    - cron: '0 * * * *' # This tells GitHub to run it at minute 0 of every hour
+    - cron: '7 * * * *' # This tells GitHub to run it at minute 7 of every hour
   workflow_dispatch: # This gives you a manual "Run" button to test it
 
 permissions:
